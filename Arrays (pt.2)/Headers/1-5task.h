@@ -29,7 +29,7 @@ void price_avg(int percent) {
 // 3rd task
 void temp_count(float t0) {
     if (t0 <= 0)
-        throw std::invalid_argument("t0 yra neteigiamas skaicius");
+        throw std::invalid_argument("t0 is not a positive value!");
 
     int count = 0;
     std::vector <float> vec = __f_init__("3_in");
@@ -50,7 +50,6 @@ void count_of_3() {
     std::vector <int> vec = __i_init__("4_in");
 
     for (auto& i : vec) {
-        std::cout << i << std::endl;
         if(i / 10 == 3)
             count++;
     }
