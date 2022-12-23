@@ -32,4 +32,22 @@ Given a 1-dimentional array, which has *n* numbers, create a program that would 
 *Example:*
 | in.txt | out.txt | Explanation |
 | ------ | ------- | ----------- |
-| 20 ___ 19 7 2 6 90 1 4580 32 5 0 654 25 4 62 120 65 -4 0 87 -84| 9 17 0 | The numbers at indecies 9 and 17 are identical (0) |
+| 20 ___ 19 7 2 6 90 1 4580 32 5 0 654 25 4 62 120 65 -4 0 87 -84 | 9 17 0 | The numbers at indecies 9 and 17 are identical (0) |
+
+## Task 8:
+Create a program to remove all suplicate values from an *n* sized array
+
+*Example:*
+| in.txt | out.txt |
+| ------ | ------- |
+| 8 ___ 5 8 4 8 9 4 5 6 | 5 8 4 |
+
+## Task 9:
+Create a program to remove all elements from an array, who's indecies are odd.
+*(The task is worded weirdly, you have to output the deleted elements)*
+
+*Example:*
+| in.txt | out.txt |
+| ------ | ------- |
+| 8 ___ 50 80 40 80 90 40 50 60 | 50 40 90 50 |
+
