@@ -1,5 +1,4 @@
-#include "1-5task.h"
-#include "6-10task.h"
+#include "Headers/Tasks.h"
 
 int main() {
     reverse_arr();
@@ -7,5 +6,8 @@ int main() {
     temp_count(5);
     count_of_3();
     atmospheric_pressure(1100, 1190);
-    //symmetry();
+    symmetry();
+    dupe_check();
+    repeats();
+    wom_paycheck();
 }
