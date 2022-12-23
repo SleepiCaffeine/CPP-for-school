@@ -88,5 +88,56 @@ void symmetry() {
     write_text("6_out", (start==end)? "YES" : "NO");
 }
 
+// 7th task
+void dupe_check() {
+    std::vector <int> vec = i_read("7_in", true);
+    std::ofstream OUT("OUT/7_out.txt");
+
+    for (auto it = vec.begin(); it != vec.end(); it++) {
+        auto it_2 = std::find(it+1, vec.end(), *it);
+        if (it == vec.end())
+            throw std::runtime_error("No Duplicate numbers found");
+        else if (it_2 == vec.end())
+            continue;
+        OUT << std::distance(vec.begin(), it)+1 <<  " " << std::distance(vec.begin(), it_2)+1 << " " << *it << "\n";
+    }
+
+    OUT.close();
+}
+
+// 8th task
+void repeats() {
+    std::vector <int> vec = i_read("8_in", true);
+    auto end = vec.end();
+    // Dynamic loop, fixing issue of going out of bounds when modifying vecotr size
+    for (auto it = vec.begin(); it != end; it++)
+        end = std::remove(it+1, vec.end(), *it); // Removes all values same as *it, past 'it'
+
+    vec.erase(end, vec.end());
+    // Solution from TechieDelight, taught me more about iterators and some useful functions
+
+    std::ofstream OUT("OUT/8_out.txt");
+    for (auto& i : vec)
+        OUT << i << " ";
+
+    OUT.close();
+}
+
+// 9th task
+void wom_paycheck() {
+    std::vector <int> vec = i_read("9_in", true);
+    auto it = vec.begin();
+
+    while(it != vec.end()) {
+        it++;
+        vec.erase(it);
+    }
+
+    std::ofstream OUT("OUT/9_out.txt");
+    for (auto& i : vec)
+        OUT << i << " ";
+
+    OUT.close();
+}
 
 
