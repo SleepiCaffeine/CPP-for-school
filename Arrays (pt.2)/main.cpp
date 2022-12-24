@@ -10,4 +10,8 @@ int main() {
     dupe_check();
     repeats();
     wom_paycheck();
+    remove_heights();
+    class_heights();
+    figure_judging();
+    team_tournament();
 }
