@@ -33,8 +33,7 @@ std::vector <int> i_read(std::string txt, bool read_n = false) {
     return vec;
 }
 
-// Writing function to output <float> vectors
-// Allows for custom outputs as well
+// Writing function to output <float> vectors using newline characters
 void f_write(std::string txt, std::vector <float> vec) {
     std::ofstream OUT("OUT/" + txt + ".txt");
 
@@ -44,8 +43,16 @@ void f_write(std::string txt, std::vector <float> vec) {
     OUT.close();
 }
 
-// Writing function to output <int> vectors
-// Allows for custom outputs as well
+// Writing function to output <float> vectors using spaces
+void f_write_s(std::string txt, std::vector <float> vec) {
+std::ofstream OUT("OUT/"+ txt + ".txt");
+    for (auto& i : vec)
+        OUT << std::setprecision(2) << i << " ";
+
+    OUT.close();
+}
+
+// Writing function to output <int> vectors using newline characters
 void i_write(std::string txt, std::vector <int> vec) {
     std::ofstream OUT("OUT/" + txt + ".txt");
 
@@ -55,7 +62,16 @@ void i_write(std::string txt, std::vector <int> vec) {
     OUT.close();
 }
 
+// Writing function to output <int> vectors using spaces
+void i_write_s(std::string txt, std::vector <int> vec) {
+std::ofstream OUT("OUT/"+ txt + ".txt");
+    for (auto& i : vec)
+        OUT << std::setprecision(2) << i << " ";
 
+    OUT.close();
+}
+
+// Writing function to output custom textw
 void write_text(std::string txt, std::string custom_text) {
     std::ofstream OUT("OUT/" + txt + ".txt");
     OUT << custom_text;
