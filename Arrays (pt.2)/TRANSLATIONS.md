@@ -85,3 +85,21 @@ You are given an array of *k* = 2<sup>N</sup> number of team tournament results.
 | ------ | ------- |
 | 8<br>2 75<br>8 60<br>1 57<br>14 51<br>6 48<br>5 36<br>7 35<br>3 31 | 4<br>2 75<br>8 60<br>1 57<br>14 51<br>|
 
+## Task 14:
+Given an array of *n* number of prices (*n* < 101). Create a program which would return the frequency of the most expensive price
+
+## Task 15:
+Given *n* and *n* numbers of years of birth. Create a program that would calculate the largest age gap
+
+*Example:*
+| in.txt | out.txt |
+| ------ | ------- |
+| 8<br>1950 1912 1973 1999 1933 1945 | 87 |
+
+## Task 16:
+Given *n* (*n* <= 1000) and *n* amount of grades (numbered 1-10), create a program, which would return the most frequent grade.
+
+*Example:*
+| in.txt | out.txt |
+| ------ | ------- |
+| 10<br>5 6 8 7 10 5 9 8 9 9 | 9 |
