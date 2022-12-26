@@ -14,4 +14,7 @@ int main() {
     class_heights();
     figure_judging();
     team_tournament();
+    price_frequency();
+    age_gap();
+    grade_frequency();
 }
