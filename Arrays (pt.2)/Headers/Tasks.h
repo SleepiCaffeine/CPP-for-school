@@ -4,6 +4,8 @@
 // 1st task
 void reverse_arr() {
     std::vector <float> vec = f_read("1_in");
+    if (vec.size() <= 0)
+        throw std::invalid_argument("Invalid Input");
     std::reverse(vec.begin(), vec.end());
     f_write("1_out", vec);
 }
@@ -11,6 +13,8 @@ void reverse_arr() {
 // 2nd task
 void price_avg(int percent) {
     std::vector <float> vec = f_read("2_in");
+    if (vec.size() <= 0)
+        throw std::invalid_argument("Invalid Input");
     auto avg_price = std::accumulate(vec.begin(), vec.end(), 0.0) / vec.size();
 
     for (auto& i : vec) {
@@ -27,11 +31,13 @@ void price_avg(int percent) {
 // 3rd task
 void temp_count(float t0) {
     if (t0 <= 0)
-        throw std::invalid_argument("t0 yra neteigiamas skaicius");
+        throw std::invalid_argument("Invalid t0");
 
-    int count = 0;
     std::vector <float> vec = f_read("3_in");
+    if (vec.size() <= 0)
+        throw std::invalid_argument("Invalid Input");
     
+    int count = 0;
     for (auto& i : vec) {
         if(i > 0 && i < t0)
             count++;
@@ -44,9 +50,11 @@ void temp_count(float t0) {
 
 // 4th task
 void count_of_3() {
-    int count = 0;
     std::vector <int> vec = i_read("4_in");
-
+    if (vec.size() <= 0)
+        throw std::invalid_argument("Invalid Input");
+    
+    int count = 0;
     for (auto& i : vec) {
         if(i / 10 == 3)
             count++;
@@ -59,9 +67,11 @@ void count_of_3() {
 
 // 5th task
 void atmospheric_pressure(int p1, int p2) {
-    int count = 0;
     std::vector <int> vec = i_read("5_in");
+    if (vec.size() <= 0)
+        throw std::invalid_argument("Invalid Input");
 
+    int count = 0;
     for (auto& i : vec) {
         if(i > p1 &&  i < p2)
             count++;
@@ -75,6 +85,8 @@ void atmospheric_pressure(int p1, int p2) {
 // 6th task
 void symmetry() {
     std::vector <int> full = i_read("6_in", true);
+    if (full.size() <= 0)
+        throw std::invalid_argument("Invalid Input");
 
     int size = full.size() / 2;
     std::vector <int> start; std::vector <int> end;
@@ -90,12 +102,14 @@ void symmetry() {
 // 7th task
 void dupe_check() {
     std::vector <int> vec = i_read("7_in", true);
+    if (vec.size() <= 0)
+        throw std::invalid_argument("Invalid Input");
     std::ofstream OUT("OUT/7_out.txt");
 
     for (auto it = vec.begin(); it != vec.end(); it++) {
         auto it_2 = std::find(it + 1, vec.end(), *it);
         if (it == vec.end())
-            throw std::runtime_error("No Duplicate numbers found");
+            throw std::invalid_argument("No Duplicate numbers found");
         else if (it_2 == vec.end())
             continue;
         OUT << std::distance(vec.begin(), it) + 1 <<  " " << std::distance(vec.begin(), it_2) + 1 << " " << *it << "\n";
@@ -107,6 +121,8 @@ void dupe_check() {
 // 8th task
 void repeats() {
     std::vector <int> vec = i_read("8_in", true);
+    if (vec.size() <= 0)
+        throw std::invalid_argument("Invalid Input");
     auto end = vec.end();
     // Dynamic loop, fixing issue of going out of bounds when modifying vector size
     for (auto it = vec.begin(); it != end; it++)
@@ -119,6 +135,8 @@ void repeats() {
 // 9th task
 void wom_paycheck() {
     std::vector <int> vec = i_read("9_in", true);
+    if (vec.size() <= 0)
+        throw std::invalid_argument("Invalid Input");
     auto it = vec.begin();
 
     while(it != vec.end()) {
@@ -132,6 +150,9 @@ void wom_paycheck() {
 // 10th task
 void remove_heights() {
     std::vector <int> vec = i_read("10_in", true);
+    if (vec.size() <= 1)
+        throw std::invalid_argument("Invalid Input");
+
     auto it = vec.begin();
     int p = vec[0]; vec.erase(it);
     
@@ -149,6 +170,9 @@ void class_heights() {
     std::vector <int> cl = i_read("11_in_class", true);
     std::vector <int> fresh = i_read("11_in_freshmen", true);
 
+    if (cl.size() <= 0 && fresh.size() <= 0)
+        throw std::invalid_argument("Invalid Input");
+
     cl.insert(cl.end(), fresh.begin(), fresh.end());
     std::sort(cl.begin(), cl.end(), std::greater<int>()); //cppreference +rep
 
@@ -162,6 +186,8 @@ void class_heights() {
 // 12th task
 void figure_judging() {
     std::vector <int> tech = i_read("12_in", true);
+    if (tech.size() <= 0)
+        throw std::invalid_argument("Invalid Input");
     std::vector <int> style;
 
     auto it = tech.begin();
@@ -193,6 +219,8 @@ void figure_judging() {
 // 13th task
 void team_tournament() {
     std::vector <int> team_num = i_read("13_in", true);
+    if (team_num.size() <= 0)
+        throw std::invalid_argument("Invalid Input");
     std::vector <int> score;
 
     auto it = team_num.begin();
@@ -214,4 +242,52 @@ void team_tournament() {
         OUT << team_num.at(index) << " " << score.at(index) << "\n";  // Output from unsorted array
     }
     OUT.close();
+}
+
+// 14th task
+void price_frequency() {
+    std::vector <float> vec = f_read("14_in", true);
+    if (vec.size() > 100 || vec.size() < 0)
+        throw std::invalid_argument("Invalid price amount");
+
+    std::sort(vec.begin(), vec.end(), std::greater <int>());
+    int count = 0;
+
+for (auto it = vec.begin(); it != vec.end(); it++) {
+        if (*it == vec[0])
+            count += 1;
+        else break;      
+    }
+
+    write_text("14_out", std::to_string(count));
+}
+
+// 15th task
+void age_gap() {
+    std::vector <int> vec = i_read("15_in", true);
+    if (vec.size() <= 0)
+        throw std::invalid_argument("Invalid Input");
+    std::sort(vec.begin(), vec.end(), std::greater<int>());
+    write_text("15_out", std::to_string(vec.at(0)-vec.at(vec.size()-1)));
+}
+
+// 16th task
+void grade_frequency() {
+    std::vector <int> vec = i_read("16_in", true);
+    if (vec.size() > 1000 || vec.size() <= 0)
+        throw std::invalid_argument("Invalid Grade Amount");
+
+    std::vector <int> count(11, 0);
+    for (auto it = vec.begin(); it != vec.end(); it++)
+        count[*it]++;
+    
+    int temp = 0;
+    int freq = -1;
+    for (int i = 1; i <= 10; i++) {
+        if (count.at(i) > temp) {
+            temp = count.at(i);
+            freq = i;
+        }
+    }
+    write_text("16_out", std::to_string(freq));
 }
