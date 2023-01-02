@@ -51,7 +51,6 @@ void temp_pressure_avg(int p0) {
     for (int i = 0; i < temp_vec.size(); i++) {
         if (temp_vec.at(i) > 0 && pres_vec.at(i) > p0) {
             temp++;
-            std::cout << "AT: " << i << " TEMP IS: " << temp << std::endl;
             count += (count == temp-1)? 1 : 0;
         }
         else
