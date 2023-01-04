@@ -30,4 +30,6 @@ void captical_count(std::string IN, std::string OUT) {
     
     input.close();
     write_text(OUT, std::to_string(count));
-}
+    
+    }
+
