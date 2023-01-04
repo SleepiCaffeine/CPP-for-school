@@ -1,5 +1,5 @@
 ## Bonus Challenge (for myself):
-- *Refrain from using strings or vectors*
+- *Refrain from using strings or vectors* (failed)
 
 ## Task 1:
 Create a program that wouuld calculate the amount of *'\n'* symbols in a given text.
@@ -22,8 +22,6 @@ A roomba is cleaning a room. It sees the room as a rectangle, divided into squar
 While moving, the roomba also collects trash and vacuums the carpet if needed. Peter inputs a command sequence. If the roomba cannot complete any given command, it will skip it. Create a program, that would show, where the roomba will execute it's final command.
 
 You are a given a text file. The first line dictates the amount of obstacles *n*, and in *n* subsequent lines, their coordinates (x; y). The final line is the command sequence line, for the roomba to execute.
-
-
 
 *Example:*
 | in.txt | out.txt | example.png |
