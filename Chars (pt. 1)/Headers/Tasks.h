@@ -81,10 +81,8 @@ void class_heights(std::string IN, std::string OUT) {
         short count = 0;
     };
 
-    struct kid *m, k;
-    m = &k;
-    struct kid *f, k2;
-    f = &k2;
+    kid* m = new kid;
+    kid* f = new kid;
 
     char ch;
     while (input) {
@@ -111,6 +109,9 @@ void class_heights(std::string IN, std::string OUT) {
               "Girls in the class: "<< f->count << std::endl <<
               "Average girl height: "<< std::fixed << std::setprecision(2) << std::accumulate(f->heights.begin(), f->heights.end(), 0)*1.0 / f->count << std::endl <<
               "Tallest girl: "<< f->heights.at(0) << std::endl;
+
+    delete m;
+    delete f;
 }
 
 

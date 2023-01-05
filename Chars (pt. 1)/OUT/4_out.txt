@@ -2,6 +2,6 @@ Boys in the class: 11
 Average boy height: 174.27
 Tallest boy: 198
 ========================
-Girls in the class: 12.00
+Girls in the class: 12
 Average girl height: 165.58
 Tallest girl: 190
