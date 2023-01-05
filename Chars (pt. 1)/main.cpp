@@ -10,4 +10,8 @@ int main() {
     captical_count("2_in", "2_out");
     space_removal("3_in", "3_out"); // first try lets gooooo
     class_heights("4_in", "4_out");
+    ROOMBA_YAY("5_in", "5_out");
+    char_freq("6_in", "6_out");
+    calculator("7_in", "7_out");
+    jam_thieves("8_in", "8_out");
 } 
